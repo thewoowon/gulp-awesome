@@ -39,7 +39,7 @@ const routes = {
 export const pug = () =>
   gulp.src(routes.pug.src).pipe(gpug()).pipe(gulp.dest(routes.pug.dest));
 
-const clean = () => del(["build"]);
+const clean = () => del(["build", ".publish"]);
 
 const img = () =>
   gulp.src(routes.img.src).pipe(gImage()).pipe(gulp.dest(routes.img.dest));
@@ -61,7 +61,7 @@ const js = () => gulp.src(routes.js.src)
     )
     .pipe(gulp.dest(routes.js.dest));
 
-const deploy = () => gulp.src("build/**/*").pipe(ghPages());
+const gh = () => gulp.src("build/**/*").pipe(ghPages());
 
 const watch = () => {
   gulp.watch(routes.pug.watch, pug);
@@ -79,4 +79,6 @@ const assets = gulp.series([pug,styles,js]);
 
 const postDev = gulp.series([webserver, watch]);
 
-export const dev = gulp.series([prepare, assets, postDev]);
+export const build = gulp.series([prepare, assets]);
+export const dev = gulp.series([build, postDev]);
+export const deploy = gulp.series([build, gh, clean]);

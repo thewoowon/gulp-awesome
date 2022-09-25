@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "gulp dev",
-    "build": "gulp build"
+    "build": "gulp build",
+    "deploy": "gulp deploy"
   },
   "repository": "git+https://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@github.com/thewoowon/gulpAwesome.git",
   "author": "woowon",
@@ -21,6 +22,7 @@
     "@babel/register": "^7.18.9",
     "babelify": "^10.0.0",
     "del": "4.1.1",
+    "gift": "^0.10.2",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-bro": "^2.0.0",
