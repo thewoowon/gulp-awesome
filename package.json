@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Awesome Gulp",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "gulp dev",
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
@@ -14,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/thewoowon/gulpAwesome/issues"
   },
-  "homepage": "https://github.com/thewoowon/gulpAwesome#readme"
+  "homepage": "https://github.com/thewoowon/gulpAwesome#readme",
+  "dependencies": {
+    "@babel/core": "^7.19.1",
+    "@babel/register": "^7.18.9"
+  }
 }
